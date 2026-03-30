@@ -948,7 +948,7 @@
   // ─────────────────────────────────────────────────────────────────────────
   //  NAVIGATION
   // ─────────────────────────────────────────────────────────────────────────
-  var expandedScreens = ['ew-chat'];
+  var expandedScreens = ['ew-chat', 'ew-drift', 'ew-faq', 'ew-mina', 'ew-kontakt', 'ew-rapportera'];
 
   function eeToggle() {
     var w = document.getElementById('ee-widget');
