@@ -4,7 +4,7 @@
   // ─────────────────────────────────────────────
   //  ⚙️  KONFIGURATION — byt ut dessa värden
   // ─────────────────────────────────────────────
-  var CHATBOT_ID     = 'XXXXXXXXXXXXXXXX';            // Zapier chatbot-ID för Emma
+  var CHATBOT_ID     = 'cmlr04ide001k6rv82sd9tfs9';            // Zapier chatbot-ID för Emma
   var RAPPORT_HOOK   = 'https://hooks.zapier.com/hooks/catch/XXXXX/XXXXX/'; // Webhook för felrapporter
   var MINA_SIDOR_URL = 'https://www.emmabodaenergi.se/mina-sidor.html';
   var SMS_URL        = 'https://www.emmabodaenergi.se/'; // Sida för SMS-prenumeration
