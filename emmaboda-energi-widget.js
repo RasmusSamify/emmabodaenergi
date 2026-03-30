@@ -122,7 +122,7 @@
     .ew-status-text { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.8); letter-spacing: 0.07em; }
 
     /* ── SCREENS ── */
-    .ew-content { flex: 1; overflow: hidden; position: relative; }
+    .ew-content { flex: 1; overflow: hidden; position: relative; min-height: 0; }
     .ew-screen {
       position: absolute; top:0; right:0; bottom:0; left:0;
       overflow-y: auto; -webkit-overflow-scrolling: touch;
