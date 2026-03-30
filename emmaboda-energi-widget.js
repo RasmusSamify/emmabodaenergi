@@ -4,7 +4,7 @@
   // ─────────────────────────────────────────────
   //  ⚙️  KONFIGURATION — byt ut dessa värden
   // ─────────────────────────────────────────────
-  var CHATBOT_ID     = 'cmlr04ide001k6rv82sd9tfs9';            // Zapier chatbot-ID för Emma
+  var CHATBOT_ID     = 'cmlr04ide001k6rv82sd9tfs9';   // Zapier chatbot-ID för Emma
   var RAPPORT_HOOK   = 'https://hooks.zapier.com/hooks/catch/XXXXX/XXXXX/'; // Webhook för felrapporter
   var MINA_SIDOR_URL = 'https://www.emmabodaenergi.se/mina-sidor.html';
   var SMS_URL        = 'https://www.emmabodaenergi.se/'; // Sida för SMS-prenumeration
@@ -27,6 +27,7 @@
 
   // ── Ladda Zapier chatbot ──────────────────────────────────────────────
   var zapierScript = document.createElement('script');
+  zapierScript.async = true;
   zapierScript.type = 'module';
   zapierScript.src = 'https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js';
   document.head.appendChild(zapierScript);
@@ -605,11 +606,7 @@
 
         <!-- ═══ CHAT (Emma) ══════════════════════════════════════════ -->
         <div class="ew-screen" id="ew-chat">
-          <zapier-interfaces-chatbot-embed
-            is-popup="false"
-            chatbot-id="${CHATBOT_ID}"
-            height="100%" width="100%">
-          </zapier-interfaces-chatbot-embed>
+          <!-- Chatbot injekteras dynamiskt när skärmen öppnas -->
         </div>
 
         <!-- ═══ FAQ ══════════════════════════════════════════════════ -->
@@ -973,10 +970,21 @@
     document.querySelectorAll('.ew-screen').forEach(function(s) {
       s.classList.remove('active', 'slide-in', 'slide-back');
     });
-    document.getElementById(screenId).classList.add('active', 'slide-in');
+    var screen = document.getElementById(screenId);
+    screen.classList.add('active', 'slide-in');
     document.getElementById('ew-back').classList.add('show');
     document.getElementById('ew-page-title').textContent = title;
     document.getElementById('ee-widget').classList.toggle('expanded', expandedScreens.indexOf(screenId) !== -1);
+
+    // Injektera Zapier-chatbot dynamiskt första gången chat-skärmen öppnas
+    if (screenId === 'ew-chat' && !screen.dataset.loaded) {
+      screen.dataset.loaded = '1';
+      var embed = document.createElement('zapier-interfaces-chatbot-embed');
+      embed.setAttribute('is-popup', 'false');
+      embed.setAttribute('chatbot-id', CHATBOT_ID);
+      embed.style.cssText = 'flex:1;width:100%;height:100%;border:none;display:block;';
+      screen.appendChild(embed);
+    }
   }
 
   // ─────────────────────────────────────────────────────────────────────────
