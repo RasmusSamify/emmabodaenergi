@@ -772,6 +772,9 @@
               <div class="faq-a">Slamtömning ingår i VA-abonnemanget och sker enligt kommunens schema. Behöver du extra tömning utanför schemat? Kontakta oss på 0471-24 97 50 eller kundservice@emmabodaenergi.se.</div>
             </div>
 
+          </div>
+        </div><!-- /ew-faq -->
+
         <!-- ═══ KARTA ═════════════════════════════════════════════════ -->
         <div class="ew-screen" id="ew-karta">
           <div class="inner-body">
@@ -832,7 +835,7 @@
             </div>
 
           </div>
-        </div>
+        </div><!-- /ew-karta -->
 
         <!-- ═══ MINA SIDOR ════════════════════════════════════════════ -->
         <div class="ew-screen" id="ew-mina">
