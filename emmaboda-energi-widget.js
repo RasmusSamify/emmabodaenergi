@@ -599,6 +599,18 @@
                 <div class="hc-sub">Tider & telefon</div>
               </div>
 
+              <!-- Hitta oss -->
+              <div class="home-card" onclick="eeNav('ew-karta','Hitta oss')">
+                <div class="hc-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="hc-label">Hitta oss</div>
+                <div class="hc-sub">Kontor & anläggningar</div>
+              </div>
+
               <!-- Rapportera fel — röd -->
               <div class="home-card full report-card" onclick="eeNav('ew-rapportera','Rapportera fel')">
                 <div class="hc-icon">
@@ -615,20 +627,6 @@
                 <div class="hc-arrow">›</div>
               </div>
 
-              <!-- Hitta oss — karta -->
-              <div class="home-card full" onclick="eeNav('ew-karta','Hitta oss')" style="border-color:#dde4f0;">
-                <div class="hc-icon">
-                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                  </svg>
-                </div>
-                <div class="hc-text">
-                  <div class="hc-label">Hitta oss</div>
-                  <div class="hc-sub">Kontor, ÅVC & anläggningar</div>
-                </div>
-                <div class="hc-arrow">›</div>
-              </div>
 
             </div>
           </div>
@@ -782,9 +780,9 @@
                 </div>
               </div>
               <div class="map-place-hours">Mån–Fre 08:00–16:30</div>
-              <iframe class="map-embed" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps?q=56.622285,15.542151&z=15&output=embed"></iframe>
-              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=Industrigatan+5+Emmaboda')">
+              <iframe class="map-embed" loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=15.532,56.617,15.552,56.627&layer=mapnik&marker=56.622285,15.542151"></iframe>
+              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=Industrigatan+5,+Emmaboda')">
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Öppna i Google Maps →
               </button>
@@ -800,9 +798,9 @@
                 </div>
               </div>
               <div class="map-place-hours">Tis–Fre 10:00–17:00 · Lör 10:00–13:00</div>
-              <iframe class="map-embed" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps?q=56.62864,15.53092&z=15&output=embed"></iframe>
-              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=L%C3%A5nggatan+21+Emmaboda')">
+              <iframe class="map-embed" loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=15.522,56.624,15.542,56.634&layer=mapnik&marker=56.62864,15.53092"></iframe>
+              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=L%C3%A5nggatan+21,+Emmaboda')">
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Öppna i Google Maps →
               </button>
@@ -817,8 +815,8 @@
                   <div class="map-place-addr">361 91 Emmaboda</div>
                 </div>
               </div>
-              <iframe class="map-embed" loading="lazy" allowfullscreen
-                src="https://www.google.com/maps?q=56.61595,15.55445&z=14&output=embed"></iframe>
+              <iframe class="map-embed" loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=15.544,56.611,15.564,56.621&layer=mapnik&marker=56.61595,15.55445"></iframe>
               <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=56.61595,15.55445')">
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Öppna i Google Maps →
