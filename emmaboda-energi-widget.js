@@ -74,20 +74,22 @@
     /* ── WIDGET PANEL ── */
     #ee-widget {
       position: fixed; bottom: 100px; right: 24px;
-      width: 382px; height: 610px;
+      width: 420px; height: 660px;
       border-radius: 18px;
       box-shadow: 0 10px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
       background: #fff; display: flex; flex-direction: column;
       overflow: hidden;
       transform: scale(0.92) translateY(18px); opacity: 0; pointer-events: none;
-      transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
+      transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease, width 0.25s ease, height 0.25s ease;
       z-index: 9998;
     }
     #ee-widget.visible  { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
-    #ee-widget.expanded { height: 680px; }
+    #ee-widget.expanded { height: 740px; }
+    #ee-widget.expanded-chat { width: 520px; height: 780px; }
     @media (max-width: 580px) {
       #ee-widget { width: calc(100vw - 16px); right: 8px; bottom: 96px; }
       #ee-widget.expanded { height: calc(100dvh - 108px); }
+      #ee-widget.expanded-chat { width: calc(100vw - 16px); height: calc(100dvh - 108px); }
     }
 
     /* ── HEADER ── */
@@ -953,9 +955,13 @@
   function eeToggle() {
     var w = document.getElementById('ee-widget');
     var l = document.getElementById('ee-launcher');
+    var t = document.getElementById('ee-tooltip');
     w.classList.toggle('visible');
     l.classList.toggle('open');
-    eeCloseTooltip();
+    // Dölj tooltip när widgeten är öppen
+    if (w.classList.contains('visible')) {
+      eeCloseTooltip();
+    }
   }
 
   function eeGoHome() {
@@ -965,7 +971,8 @@
     document.getElementById('ew-home').classList.add('active', 'slide-back');
     document.getElementById('ew-back').classList.remove('show');
     document.getElementById('ew-page-title').textContent = 'Startsida';
-    document.getElementById('ee-widget').classList.remove('expanded');
+    var widget = document.getElementById('ee-widget');
+    widget.classList.remove('expanded', 'expanded-chat');
   }
 
   function eeNav(screenId, title) {
@@ -976,7 +983,14 @@
     screen.classList.add('active', 'slide-in');
     document.getElementById('ew-back').classList.add('show');
     document.getElementById('ew-page-title').textContent = title;
-    document.getElementById('ee-widget').classList.toggle('expanded', expandedScreens.indexOf(screenId) !== -1);
+
+    var widget = document.getElementById('ee-widget');
+    widget.classList.remove('expanded', 'expanded-chat');
+    if (screenId === 'ew-chat') {
+      widget.classList.add('expanded-chat');
+    } else if (expandedScreens.indexOf(screenId) !== -1) {
+      widget.classList.add('expanded');
+    }
 
     // Injektera Zapier-chatbot dynamiskt första gången chat-skärmen öppnas
     if (screenId === 'ew-chat' && !screen.dataset.loaded) {
