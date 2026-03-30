@@ -127,8 +127,9 @@
       position: absolute; top:0; right:0; bottom:0; left:0;
       overflow-y: auto; -webkit-overflow-scrolling: touch;
       background: #f4f6f4; display: none; flex-direction: column;
+      z-index: 1; visibility: hidden;
     }
-    .ew-screen.active { display: flex; }
+    .ew-screen.active { display: flex !important; visibility: visible; z-index: 2; }
     .ew-screen.slide-in   { animation: eeSlideIn   0.22s ease forwards; }
     .ew-screen.slide-back { animation: eeSlideBack 0.2s  ease forwards; }
     @keyframes eeSlideIn   { from{opacity:0;transform:translateX(26px)} to{opacity:1;transform:translateX(0)} }
