@@ -1102,7 +1102,7 @@
   // ─────────────────────────────────────────────────────────────────────────
   //  NAVIGATION
   // ─────────────────────────────────────────────────────────────────────────
-  var expandedScreens = ['ew-chat', 'ew-drift', 'ew-faq', 'ew-mina', 'ew-kontakt', 'ew-rapportera', 'ew-karta'];
+  var expandedScreens = ['ew-chat', 'ew-drift', 'ew-faq', 'ew-rapportera', 'ew-karta'];
 
   var eeWidgetEverOpened = false;
 
