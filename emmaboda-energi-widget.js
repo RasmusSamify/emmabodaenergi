@@ -35,14 +35,14 @@
   // ── Typsnitt ──────────────────────────────────────────────────────────
   var fontLink = document.createElement('link');
   fontLink.rel  = 'stylesheet';
-  fontLink.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap';
+  fontLink.href = 'https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap';
   document.head.appendChild(fontLink);
 
   // ─── CSS ──────────────────────────────────────────────────────────────
   var style = document.createElement('style');
   style.textContent = `
     #ee-widget-container * {
-      font-family: 'Montserrat', sans-serif !important;
+      font-family: 'Source Sans 3', sans-serif !important;
       box-sizing: border-box;
     }
 
@@ -56,7 +56,7 @@
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
       z-index: 9999; overflow: visible;
     }
-    #ee-launcher:hover { transform: scale(1.07); box-shadow: 0 6px 24px rgba(46,125,82,0.28); border-color: #2e7d52; }
+    #ee-launcher:hover { transform: scale(1.07); box-shadow: 0 6px 24px rgba(29,52,117,0.28); border-color: #1d3475; }
     #ee-launcher.open .si-chat  { display: none; }
     #ee-launcher.open .si-close { display: block !important; }
 
@@ -92,7 +92,7 @@
 
     /* ── HEADER ── */
     .ew-header {
-      background: linear-gradient(140deg, #122b1d 0%, #1e5c38 60%, #2e7d52 100%);
+      background: linear-gradient(140deg, #0d1f4e 0%, #1a2966 60%, #1d3475 100%);
       padding: 13px 16px;
       display: flex; align-items: center; justify-content: space-between;
       flex-shrink: 0;
@@ -126,7 +126,7 @@
     .ew-screen {
       position: absolute; top:0; right:0; bottom:0; left:0;
       overflow-y: auto; -webkit-overflow-scrolling: touch;
-      background: #f4f6f4; display: none; flex-direction: column;
+      background: #f4f6fb; display: none; flex-direction: column;
       z-index: 1; visibility: hidden;
     }
     .ew-screen.active { display: flex !important; visibility: visible; z-index: 2; }
@@ -147,7 +147,7 @@
     .drift-hero:hover  { filter: brightness(0.95); }
     .drift-hero:active { transform: scale(0.99); }
 
-    .drift-hero.ok   { background: linear-gradient(135deg, #1b5e20 0%, #2d8653 100%); }
+    .drift-hero.ok   { background: linear-gradient(135deg, #0d1f4e 0%, #1d3475 100%); }
     .drift-hero.warn { background: linear-gradient(135deg, #bf6000 0%, #e8971e 100%); }
     .drift-hero.err  { background: linear-gradient(135deg, #8b0000 0%, #c62828 100%); }
 
@@ -204,12 +204,12 @@
     }
     .home-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .home-card {
-      background: #fff; border: 1px solid #e4ebe7; border-radius: 12px;
+      background: #fff; border: 1px solid #dde4f0; border-radius: 12px;
       padding: 13px 11px; display: flex; flex-direction: column;
       align-items: center; gap: 6px; cursor: pointer; text-align: center;
       transition: border-color 0.15s, transform 0.1s, box-shadow 0.15s;
     }
-    .home-card:hover { border-color: #2e7d52; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(46,125,82,0.1); }
+    .home-card:hover { border-color: #1d3475; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(29,52,117,0.1); }
     .home-card:active { transform: scale(0.97); }
     .home-card.full {
       grid-column: span 2; flex-direction: row; text-align: left;
@@ -218,10 +218,10 @@
     .home-card.full .hc-text { flex: 1; }
     .home-card.full .hc-arrow { color: #ccc; font-size: 20px; font-weight: 300; flex-shrink: 0; }
     .hc-icon {
-      width: 36px; height: 36px; border-radius: 10px; background: #eef4f0;
+      width: 36px; height: 36px; border-radius: 10px; background: #eef1f9;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .hc-icon svg { stroke: #2e7d52; }
+    .hc-icon svg { stroke: #1d3475; }
     .hc-label { font-size: 11.5px; font-weight: 700; color: #111; }
     .hc-sub   { font-size: 10px; color: #a0a8a4; }
 
@@ -233,7 +233,7 @@
 
     /* Emma-chat-kort — dark green full width */
     .home-card.chat-card {
-      background: linear-gradient(135deg, #122b1d 0%, #2e7d52 100%);
+      background: linear-gradient(135deg, #0d1f4e 0%, #1d3475 100%);
       border-color: transparent; color: #fff;
     }
     .home-card.chat-card .hc-icon { background: rgba(255,255,255,0.15); }
@@ -250,7 +250,7 @@
 
     /* ── DRIFTSTÖRNINGAR SCREEN ── */
     .drift-row {
-      background: #fff; border: 1px solid #e4ebe7; border-radius: 12px;
+      background: #fff; border: 1px solid #dde4f0; border-radius: 12px;
       padding: 13px 14px; margin-bottom: 8px;
       display: flex; align-items: center; gap: 12px;
     }
@@ -263,7 +263,7 @@
       font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
       white-space: nowrap;
     }
-    .drift-row-badge.ok   { background: #e8f5e9; color: #1b5e20; }
+    .drift-row-badge.ok   { background: #e8ecf9; color: #0d1f4e; }
     .drift-row-badge.warn { background: #fff3e0; color: #bf6000; }
     .drift-row-badge.err  { background: #ffebee; color: #c62828; }
 
@@ -273,7 +273,7 @@
     }
 
     .sms-box {
-      background: linear-gradient(135deg, #122b1d 0%, #1e5c38 100%);
+      background: linear-gradient(135deg, #0d1f4e 0%, #1a2966 100%);
       border-radius: 12px; padding: 14px 16px;
       display: flex; align-items: center; gap: 13px; margin-top: 4px;
     }
@@ -281,15 +281,15 @@
     .sms-box-text { flex: 1; font-size: 11.5px; color: rgba(255,255,255,0.85); line-height: 1.5; }
     .sms-box-text strong { color: #fff; display: block; margin-bottom: 2px; font-size: 12.5px; }
     .sms-btn {
-      background: #52b788; border: none; border-radius: 8px;
+      background: #4a6fc0; border: none; border-radius: 8px;
       padding: 9px 13px; font-size: 11px; font-weight: 700; color: #fff;
       cursor: pointer; white-space: nowrap; flex-shrink: 0;
-      font-family: 'Montserrat', sans-serif !important; transition: opacity 0.15s;
+      font-family: 'Source Sans 3', sans-serif !important; transition: opacity 0.15s;
     }
     .sms-btn:hover { opacity: 0.85; }
 
     /* ── FAQ ── */
-    .faq-item { border: 1px solid #e4ebe7; border-radius: 10px; margin-bottom: 8px; overflow: hidden; background: #fff; }
+    .faq-item { border: 1px solid #dde4f0; border-radius: 10px; margin-bottom: 8px; overflow: hidden; background: #fff; }
     .faq-q {
       width: 100%; text-align: left; background: none; border: none;
       padding: 12px 14px; cursor: pointer;
@@ -297,7 +297,7 @@
       font-size: 12px; font-weight: 600; color: #111;
       transition: background 0.1s; gap: 10px;
     }
-    .faq-q:hover { background: #f4f6f4; }
+    .faq-q:hover { background: #f4f6fb; }
     .faq-chevron { flex-shrink: 0; transition: transform 0.2s; color: #a0a8a4; font-size: 13px; }
     .faq-item.open .faq-chevron { transform: rotate(180deg); }
     .faq-a {
@@ -319,12 +319,12 @@
     .jour-box-num   { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
     .jour-box-sub   { font-size: 10.5px; color: rgba(255,255,255,0.65); margin-top: 2px; }
 
-    .contact-card { background: #fff; border: 1px solid #e4ebe7; border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+    .contact-card { background: #fff; border: 1px solid #dde4f0; border-radius: 12px; padding: 14px; margin-bottom: 10px; }
     .contact-head { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
     .contact-av {
-      width: 40px; height: 40px; border-radius: 50%; background: #eef4f0;
+      width: 40px; height: 40px; border-radius: 50%; background: #eef1f9;
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 700; color: #2e7d52; flex-shrink: 0;
+      font-size: 16px; font-weight: 700; color: #1d3475; flex-shrink: 0;
     }
     .contact-name { font-size: 13px; font-weight: 700; color: #111; }
     .contact-role { font-size: 11px; color: #a0a8a4; }
@@ -334,38 +334,38 @@
       font-size: 12px; color: #333; text-decoration: none;
       padding: 8px 10px; border-radius: 8px; transition: background 0.1s;
     }
-    .contact-link:hover { background: #f4f6f4; }
+    .contact-link:hover { background: #f4f6fb; }
     .contact-link-icon {
-      width: 28px; height: 28px; border-radius: 8px; background: #eef4f0;
+      width: 28px; height: 28px; border-radius: 8px; background: #eef1f9;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .contact-link-icon svg { stroke: #2e7d52; }
+    .contact-link-icon svg { stroke: #1d3475; }
     .contact-link-info { flex: 1; }
     .contact-link-label { font-size: 9.5px; color: #a0a8a4; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
     .contact-link-val   { font-size: 12px; color: #111; font-weight: 600; margin-top: 1px; }
     .opening-box {
-      background: #eef4f0; border-radius: 10px; padding: 12px 14px;
-      font-size: 12px; color: #2e7d52; font-weight: 600; line-height: 1.7;
+      background: #eef1f9; border-radius: 10px; padding: 12px 14px;
+      font-size: 12px; color: #1d3475; font-weight: 600; line-height: 1.7;
     }
-    .opening-box-title { font-size: 9.5px; color: #52926d; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .opening-box-title { font-size: 9.5px; color: #3d5a99; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
 
     /* ── MINA SIDOR ── */
-    .mina-card { background: #fff; border: 1px solid #e4ebe7; border-radius: 14px; padding: 22px 18px; text-align: center; margin-bottom: 10px; }
-    .mina-card-icon { width: 56px; height: 56px; border-radius: 16px; background: #eef4f0; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-    .mina-card-icon svg { stroke: #2e7d52; }
+    .mina-card { background: #fff; border: 1px solid #dde4f0; border-radius: 14px; padding: 22px 18px; text-align: center; margin-bottom: 10px; }
+    .mina-card-icon { width: 56px; height: 56px; border-radius: 16px; background: #eef1f9; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+    .mina-card-icon svg { stroke: #1d3475; }
     .mina-card-title { font-size: 15px; font-weight: 700; color: #111; margin-bottom: 6px; }
     .mina-card-sub   { font-size: 12px; color: #6b7870; margin-bottom: 18px; line-height: 1.6; }
     .mina-btn {
       display: block; width: 100%; padding: 12px;
-      background: #2e7d52; color: #fff; border: none; border-radius: 10px;
+      background: #1d3475; color: #fff; border: none; border-radius: 10px;
       font-size: 13px; font-weight: 700; cursor: pointer; text-align: center;
       text-decoration: none; transition: background 0.15s;
-      font-family: 'Montserrat', sans-serif !important;
+      font-family: 'Source Sans 3', sans-serif !important;
     }
-    .mina-btn:hover { background: #1b5e20; }
+    .mina-btn:hover { background: #0d1f4e; }
     .mina-features { display: flex; flex-direction: column; gap: 8px; }
     .mina-feature  { display: flex; align-items: center; gap: 9px; font-size: 12px; color: #5a6662; }
-    .mina-feature-check { width: 18px; height: 18px; border-radius: 50%; background: #e8f5e9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #1b5e20; font-weight: 700; }
+    .mina-feature-check { width: 18px; height: 18px; border-radius: 50%; background: #e8ecf9; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 10px; color: #0d1f4e; font-weight: 700; }
 
     /* ── RAPPORTERA FEL ── */
     .rf-field { margin-bottom: 12px; }
@@ -373,11 +373,11 @@
     .rf-select, .rf-textarea, .rf-input {
       width: 100%; border: 1.5px solid #dde8e2; border-radius: 10px;
       padding: 10px 12px; font-size: 12.5px;
-      font-family: 'Montserrat', sans-serif !important;
+      font-family: 'Source Sans 3', sans-serif !important;
       color: #111; background: #fff; outline: none;
       transition: border-color 0.15s; -webkit-appearance: none; appearance: none;
     }
-    .rf-select:focus, .rf-textarea:focus, .rf-input:focus { border-color: #2e7d52; }
+    .rf-select:focus, .rf-textarea:focus, .rf-input:focus { border-color: #1d3475; }
     .rf-textarea { min-height: 76px; resize: none; }
     .rf-input::placeholder { color: #bbb; }
 
@@ -387,13 +387,13 @@
       border-radius: 10px; font-size: 13px; font-weight: 700;
       cursor: pointer; text-align: center;
       transition: opacity 0.15s, transform 0.1s;
-      font-family: 'Montserrat', sans-serif !important; letter-spacing: 0.01em;
+      font-family: 'Source Sans 3', sans-serif !important; letter-spacing: 0.01em;
     }
     .ew-btn:active { transform: scale(0.98); }
-    .ew-btn-primary { background: #2e7d52; color: #fff; }
-    .ew-btn-primary:hover { background: #1b5e20; }
-    .ew-btn-outline { background: transparent; color: #2e7d52; border: 1.5px solid #2e7d52; }
-    .ew-btn-outline:hover { background: #eef4f0; }
+    .ew-btn-primary { background: #1d3475; color: #fff; }
+    .ew-btn-primary:hover { background: #0d1f4e; }
+    .ew-btn-outline { background: transparent; color: #1d3475; border: 1.5px solid #1d3475; }
+    .ew-btn-outline:hover { background: #eef1f9; }
     .ew-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
     /* ── SUCCESS STATE ── */
@@ -409,7 +409,7 @@
     /* ── TOOLTIP ── */
     #ee-tooltip {
       position: fixed; bottom: 102px; right: 24px;
-      background: #122b1d; color: #fff;
+      background: #0d1f4e; color: #fff;
       padding: 14px 18px 14px 15px; border-radius: 14px 14px 4px 14px;
       font-size: 13px; font-weight: 500; line-height: 1.55; max-width: 250px;
       cursor: pointer; box-shadow: 0 4px 24px rgba(0,0,0,0.22);
@@ -421,7 +421,7 @@
     #ee-tooltip::after {
       content: ''; position: absolute; bottom: -8px; right: 22px;
       border-left: 8px solid transparent; border-right: 8px solid transparent;
-      border-top: 8px solid #122b1d;
+      border-top: 8px solid #0d1f4e;
     }
     #ee-tooltip-close {
       position: absolute; top: 7px; right: 9px; background: none; border: none;
@@ -432,7 +432,7 @@
 
     /* ── FOOTER ── */
     .ew-footer {
-      padding: 8px 14px; border-top: 1px solid #e8eee8;
+      padding: 8px 14px; border-top: 1px solid #e4eaf5;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; background: #fff;
     }
@@ -456,10 +456,10 @@
     <!-- LAUNCHER -->
     <button id="ee-launcher" onclick="eeToggle()" aria-label="Öppna kundtjänst">
       <div id="ee-launcher-badge">!</div>
-      <svg class="si-chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2e7d52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg class="si-chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1d3475" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
-      <svg class="si-close" style="display:none" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e7d52" stroke-width="2.5" stroke-linecap="round">
+      <svg class="si-close" style="display:none" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d3475" stroke-width="2.5" stroke-linecap="round">
         <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     </button>
@@ -472,7 +472,7 @@
         <div class="ew-header-left">
           <button class="ew-back" id="ew-back" onclick="eeGoHome()">‹</button>
           <div class="ew-brand">
-            <div class="ew-brand-name">Emmaboda Energi</div>
+            <img src="https://www.emmabodaenergi.se/images/18.2566d402159ad99912a19ab9/1487592022927/Emmaboda%20Energi.png" alt="Emmaboda Energi" style="height:32px;width:auto;display:block;filter:brightness(0) invert(1);" />
             <div class="ew-brand-sub">Kundtjänst</div>
           </div>
           <div class="ew-divider"></div>
