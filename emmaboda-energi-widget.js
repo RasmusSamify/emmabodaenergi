@@ -74,7 +74,7 @@
     /* ── WIDGET PANEL ── */
     #ee-widget {
       position: fixed; bottom: 100px; right: 24px;
-      width: 420px; height: 660px;
+      width: 420px; height: 720px;
       border-radius: 18px;
       box-shadow: 0 10px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
       background: #fff; display: flex; flex-direction: column;
@@ -84,8 +84,8 @@
       z-index: 9998;
     }
     #ee-widget.visible  { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
-    #ee-widget.expanded { height: 740px; }
-    #ee-widget.expanded-chat { width: 520px; height: 780px; }
+    #ee-widget.expanded { height: 800px; }
+    #ee-widget.expanded-chat { width: 520px; height: 840px; }
     @media (max-width: 580px) {
       #ee-widget { width: calc(100vw - 16px); right: 8px; bottom: 96px; }
       #ee-widget.expanded { height: calc(100dvh - 108px); }
@@ -433,6 +433,35 @@
     #ee-tooltip-close:hover { color: #fff; }
     @keyframes eeBlink { 0%,100%{opacity:1} 50%{opacity:0} }
 
+    /* ── KARTA ── */
+    .map-place-card {
+      background: #fff; border: 1px solid #dde4f0; border-radius: 12px;
+      margin-bottom: 10px; overflow: hidden;
+    }
+    .map-place-header {
+      display: flex; align-items: center; gap: 12px; padding: 13px 14px 10px;
+    }
+    .map-place-icon {
+      width: 38px; height: 38px; border-radius: 10px; background: #eef1f9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .map-place-name { font-size: 12.5px; font-weight: 700; color: #111; }
+    .map-place-addr { font-size: 11px; color: #8a96b0; margin-top: 2px; }
+    .map-place-hours { font-size: 11px; color: #5a6662; padding: 0 14px 6px; }
+    .map-embed {
+      width: 100%; height: 160px; border: none; display: block;
+      border-top: 1px solid #eef1f9;
+    }
+    .map-open-btn {
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 10px 14px; background: #eef1f9; border: none; width: 100%;
+      font-size: 11.5px; font-weight: 700; color: #1d3475; cursor: pointer;
+      font-family: 'Source Sans 3', sans-serif !important;
+      transition: background 0.15s;
+    }
+    .map-open-btn:hover { background: #dde4f0; }
+
     /* ── FOOTER ── */
     .ew-footer {
       padding: 8px 14px; border-top: 1px solid #e4eaf5;
@@ -586,6 +615,21 @@
                 <div class="hc-arrow">›</div>
               </div>
 
+              <!-- Hitta oss — karta -->
+              <div class="home-card full" onclick="eeNav('ew-karta','Hitta oss')" style="border-color:#dde4f0;">
+                <div class="hc-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div class="hc-text">
+                  <div class="hc-label">Hitta oss</div>
+                  <div class="hc-sub">Kontor, ÅVC & anläggningar</div>
+                </div>
+                <div class="hc-arrow">›</div>
+              </div>
+
             </div>
           </div>
         </div><!-- /ew-home -->
@@ -680,6 +724,105 @@
                 <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="faq-a">Vi bygger ut fibernätet löpande i Emmaboda kommun. Kontakta oss för att ta reda på om din fastighet kan anslutas. Anslutningskostnaden är en engångsinvestering som följer fastigheten.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="eeFaq(this)">
+                Vad tar ÅVC emot?
+                <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">På återvinningscentralen (ÅVC) kan du lämna grovavfall, farligt avfall, elavfall och förpackningar. Öppet Tis–Fre 10–17, Lördag 10–13. Stängt helgdagar.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="eeFaq(this)">
+                Hur fungerar sophämtningen?
+                <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Sophämtning sker varannan vecka för hushållsavfall. Matavfall hämtas varje vecka. Kontakta oss för att se ditt hämtningsschema eller logga in på Mina sidor.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="eeFaq(this)">
+                Vad gör jag vid vattenstopp?
+                <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Kontrollera om det är ett planerat avbrott via vår driftinformation. Vid akut vattenstopp — ring jouren på <strong>0471-24 97 50</strong> dygnet runt.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="eeFaq(this)">
+                Hur ansluter jag mig till fjärrvärme?
+                <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Kontakta oss för en kostnadsfri genomgång av om din fastighet kan anslutas till fjärrvärmenätet. Vi hjälper dig med hela processen från offert till driftsättning.</div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q" onclick="eeFaq(this)">
+                Hur beställer jag slamtömning?
+                <svg class="faq-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a">Slamtömning ingår i VA-abonnemanget och sker enligt kommunens schema. Behöver du extra tömning utanför schemat? Kontakta oss på 0471-24 97 50 eller kundservice@emmabodaenergi.se.</div>
+            </div>
+
+        <!-- ═══ KARTA ═════════════════════════════════════════════════ -->
+        <div class="ew-screen" id="ew-karta">
+          <div class="inner-body">
+            <div class="inner-title">Hitta oss</div>
+            <div class="inner-sub">Våra anläggningar och kontor i Emmaboda</div>
+
+            <!-- Kontoret -->
+            <div class="map-place-card">
+              <div class="map-place-header">
+                <div class="map-place-icon">🏢</div>
+                <div>
+                  <div class="map-place-name">Emmaboda Energi — Kontor</div>
+                  <div class="map-place-addr">Industrigatan 5, 361 31 Emmaboda</div>
+                </div>
+              </div>
+              <div class="map-place-hours">Mån–Fre 08:00–16:30</div>
+              <iframe class="map-embed" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps?q=56.622285,15.542151&z=15&output=embed"></iframe>
+              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=Industrigatan+5+Emmaboda')">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Öppna i Google Maps →
+              </button>
+            </div>
+
+            <!-- ÅVC -->
+            <div class="map-place-card">
+              <div class="map-place-header">
+                <div class="map-place-icon">♻️</div>
+                <div>
+                  <div class="map-place-name">Återvinningscentralen (ÅVC)</div>
+                  <div class="map-place-addr">Långgatan 21, 361 31 Emmaboda</div>
+                </div>
+              </div>
+              <div class="map-place-hours">Tis–Fre 10:00–17:00 · Lör 10:00–13:00</div>
+              <iframe class="map-embed" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps?q=56.62864,15.53092&z=15&output=embed"></iframe>
+              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=L%C3%A5nggatan+21+Emmaboda')">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Öppna i Google Maps →
+              </button>
+            </div>
+
+            <!-- Reningsverk -->
+            <div class="map-place-card">
+              <div class="map-place-header">
+                <div class="map-place-icon">💧</div>
+                <div>
+                  <div class="map-place-name">Reningsverket</div>
+                  <div class="map-place-addr">361 91 Emmaboda</div>
+                </div>
+              </div>
+              <iframe class="map-embed" loading="lazy" allowfullscreen
+                src="https://www.google.com/maps?q=56.61595,15.55445&z=14&output=embed"></iframe>
+              <button class="map-open-btn" onclick="eeOpenURL('https://maps.google.com/?q=56.61595,15.55445')">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Öppna i Google Maps →
+              </button>
             </div>
 
           </div>
@@ -950,16 +1093,17 @@
   // ─────────────────────────────────────────────────────────────────────────
   //  NAVIGATION
   // ─────────────────────────────────────────────────────────────────────────
-  var expandedScreens = ['ew-chat', 'ew-drift', 'ew-faq', 'ew-mina', 'ew-kontakt', 'ew-rapportera'];
+  var expandedScreens = ['ew-chat', 'ew-drift', 'ew-faq', 'ew-mina', 'ew-kontakt', 'ew-rapportera', 'ew-karta'];
+
+  var eeWidgetEverOpened = false;
 
   function eeToggle() {
     var w = document.getElementById('ee-widget');
     var l = document.getElementById('ee-launcher');
-    var t = document.getElementById('ee-tooltip');
     w.classList.toggle('visible');
     l.classList.toggle('open');
-    // Dölj tooltip när widgeten är öppen
     if (w.classList.contains('visible')) {
+      eeWidgetEverOpened = true;
       eeCloseTooltip();
     }
   }
@@ -1096,8 +1240,11 @@
     document.getElementById('ee-launcher').classList.add('open');
   }
 
-  // Visa välkomsttooltip efter 1.5 sek
+  // Visa välkomsttooltip efter 1.5 sek — bara om widgeten inte redan öppnats
   setTimeout(function() {
+    if (eeWidgetEverOpened) return;
+    var w = document.getElementById('ee-widget');
+    if (w && w.classList.contains('visible')) return;
     var t = document.getElementById('ee-tooltip');
     if (t) {
       t.style.display = '';
