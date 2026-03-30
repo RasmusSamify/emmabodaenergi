@@ -92,34 +92,35 @@
 
     /* ── HEADER ── */
     .ew-header {
-      background: linear-gradient(140deg, #0d1f4e 0%, #1a2966 60%, #1d3475 100%);
-      padding: 13px 16px;
+      background: #fff;
+      padding: 11px 16px;
       display: flex; align-items: center; justify-content: space-between;
       flex-shrink: 0;
+      border-bottom: 1px solid #dde4f0;
     }
     .ew-header-left { display: flex; align-items: center; gap: 0; }
     .ew-back {
-      background: rgba(255,255,255,0.1); border: 0.5px solid rgba(255,255,255,0.2);
+      background: rgba(0,0,0,0.06); border: 0.5px solid rgba(0,0,0,0.12);
       cursor: pointer; width: 28px; height: 28px; border-radius: 50%;
       display: none; align-items: center; justify-content: center;
-      color: #fff; font-size: 17px; flex-shrink: 0; margin-right: 11px;
+      color: #1d3475; font-size: 17px; flex-shrink: 0; margin-right: 11px;
       transition: background 0.15s; line-height: 1;
     }
     .ew-back.show { display: flex; }
-    .ew-back:hover { background: rgba(255,255,255,0.22); }
+    .ew-back:hover { background: rgba(0,0,0,0.12); }
     .ew-brand { display: flex; flex-direction: column; }
-    .ew-brand-name { font-size: 13.5px; font-weight: 700; color: #fff; letter-spacing: 0.03em; line-height: 1.15; }
-    .ew-brand-sub  { font-size: 8.5px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.14em; }
-    .ew-divider    { width: 1px; height: 28px; background: rgba(255,255,255,0.18); margin: 0 12px; flex-shrink: 0; }
+    .ew-brand-name { font-size: 13.5px; font-weight: 700; color: #1d3475; letter-spacing: 0.03em; line-height: 1.15; }
+    .ew-brand-sub  { font-size: 8.5px; color: #8a96b0; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 2px; }
+    .ew-divider    { width: 1px; height: 28px; background: #dde4f0; margin: 0 12px; flex-shrink: 0; }
     .ew-header-right { display: flex; flex-direction: column; }
-    .ew-page-title { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.75); letter-spacing: 0.12em; text-transform: uppercase; }
+    .ew-page-title { font-size: 9px; font-weight: 600; color: #8a96b0; letter-spacing: 0.12em; text-transform: uppercase; }
     .ew-status-row { display: flex; align-items: center; gap: 5px; margin-top: 4px; }
     .ew-hdot { width: 6px; height: 6px; border-radius: 50%; }
-    .ew-hdot.ok   { background: #74c69d; }
-    .ew-hdot.warn { background: #ffcc02; animation: eePulse 1.5s ease-in-out infinite; }
-    .ew-hdot.err  { background: #ef5350; animation: eePulse 1s ease-in-out infinite; }
+    .ew-hdot.ok   { background: #2e7d52; }
+    .ew-hdot.warn { background: #f59e0b; animation: eePulse 1.5s ease-in-out infinite; }
+    .ew-hdot.err  { background: #c62828; animation: eePulse 1s ease-in-out infinite; }
     @keyframes eePulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-    .ew-status-text { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.8); letter-spacing: 0.07em; }
+    .ew-status-text { font-size: 9px; font-weight: 600; color: #4a5568; letter-spacing: 0.07em; }
 
     /* ── SCREENS ── */
     .ew-content { flex: 1; overflow: hidden; position: relative; min-height: 0; }
@@ -472,7 +473,7 @@
         <div class="ew-header-left">
           <button class="ew-back" id="ew-back" onclick="eeGoHome()">‹</button>
           <div class="ew-brand">
-            <img src="https://www.emmabodaenergi.se/images/18.2566d402159ad99912a19ab9/1487592022927/Emmaboda%20Energi.png" alt="Emmaboda Energi" style="height:32px;width:auto;display:block;filter:brightness(0) invert(1);" />
+            <img src="https://www.emmabodaenergi.se/images/18.2566d402159ad99912a19ab9/1487592022927/Emmaboda%20Energi.png" alt="Emmaboda Energi" style="height:36px;width:auto;display:block;" />
             <div class="ew-brand-sub">Kundtjänst</div>
           </div>
           <div class="ew-divider"></div>
