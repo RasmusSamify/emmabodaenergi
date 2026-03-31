@@ -181,10 +181,11 @@
     .drift-hero-main { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 13px; }
     .drift-hero-icon-wrap {
       width: 40px; height: 40px; border-radius: 12px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.18);
       display: flex; align-items: center; justify-content: center;
       font-size: 20px; flex-shrink: 0;
     }
+    .drift-hero-icon-wrap svg { width: 22px; height: 22px; stroke: #fff; }
     .drift-hero-title { font-size: 15px; font-weight: 700; color: #fff; line-height: 1.25; margin-top: 2px; }
     .drift-hero-subtitle { font-size: 11.5px; color: rgba(255,255,255,0.65); margin-top: 4px; line-height: 1.4; }
 
@@ -265,7 +266,11 @@
       padding: 13px 14px; margin-bottom: 8px;
       display: flex; align-items: center; gap: 12px;
     }
-    .drift-row-icon { font-size: 20px; flex-shrink: 0; }
+    .drift-row-icon {
+      width: 36px; height: 36px; border-radius: 10px; background: #eef1f9;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .drift-row-icon svg { width: 18px; height: 18px; stroke: #1d3475; }
     .drift-row-info { flex: 1; min-width: 0; }
     .drift-row-name { font-size: 12.5px; font-weight: 700; color: #111; }
     .drift-row-msg  { font-size: 11px; color: #6b7870; margin-top: 2px; line-height: 1.4; }
@@ -648,7 +653,7 @@
             <div class="drift-updated" id="drift-updated-text"></div>
             <div id="drift-rows"></div>
             <div class="sms-box">
-              <div class="sms-box-icon">📲</div>
+              <div class="sms-box-icon"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5" stroke-linecap="round"/><path d="M9 7h6M9 11h4"/></svg></div>
               <div class="sms-box-text">
                 <strong>Få SMS vid störningar</strong>
                 Anmäl ditt nummer så meddelar vi dig direkt vid driftstörningar och planerade arbeten.
@@ -784,7 +789,7 @@
             <!-- Kontoret -->
             <div class="map-place-card">
               <div class="map-place-header">
-                <div class="map-place-icon">🏢</div>
+                <div class="map-place-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1d3475" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="18" rx="1"/><path d="M21 8h-4a1 1 0 0 0-1 1v12h5V9a1 1 0 0 0 0-1z"/><path d="M7 7h4M7 11h4M7 15h4"/><rect x="8" y="18" width="2" height="3"/></svg></div>
                 <div>
                   <div class="map-place-name">Emmaboda Energi — Kontor</div>
                   <div class="map-place-addr">Industrigatan 5, 361 31 Emmaboda</div>
@@ -802,7 +807,7 @@
             <!-- ÅVC -->
             <div class="map-place-card">
               <div class="map-place-header">
-                <div class="map-place-icon">♻️</div>
+                <div class="map-place-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1d3475" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 8.5 1.5 3.5 6.5 3.5"/><path d="M1.5 3.5 7 9a11 11 0 0 1 13 0"/><polyline points="22.5 15.5 22.5 20.5 17.5 20.5"/><path d="M22.5 20.5 17 15a11 11 0 0 1-13 0"/></svg></div>
                 <div>
                   <div class="map-place-name">Återvinningscentralen (ÅVC)</div>
                   <div class="map-place-addr">Långgatan 21, 361 31 Emmaboda</div>
@@ -820,7 +825,7 @@
             <!-- Reningsverk -->
             <div class="map-place-card">
               <div class="map-place-header">
-                <div class="map-place-icon">💧</div>
+                <div class="map-place-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#1d3475" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12.5 4 15a8 8 0 0 0 16 0c0-2.5-2-7-8-13z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></div>
                 <div>
                   <div class="map-place-name">Reningsverket</div>
                   <div class="map-place-addr">361 91 Emmaboda</div>
@@ -869,7 +874,7 @@
 
             <!-- Jourtelefon — röd, prominent -->
             <div class="jour-box">
-              <div class="jour-box-icon">🚨</div>
+              <div class="jour-box-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.82 19 19.5 19.5 0 0 1 5 12.18 19.79 19.79 0 0 1 2.08 3.18 2 2 0 0 1 4.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.5 2.5c1.5 1 3 2.5 3.5 5"/><path d="M17.5 0C20 1.5 22 4 22 7.5"/></svg></div>
               <div class="jour-box-text">
                 <div class="jour-box-label">Akuta fel & jour</div>
                 <div class="jour-box-num">0471-24 97 50</div>
@@ -968,7 +973,7 @@
 
           <div class="inner-body" id="ew-rapport-success" style="display:none;">
             <div class="success-box">
-              <div class="success-emoji">✅</div>
+              <div class="success-emoji"><svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#2e7d52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m8 12 3 3 5-5"/></svg></div>
               <div class="success-title">Rapport skickad!</div>
               <div class="success-sub">Vi har tagit emot din felanmälan och återkommer så snart som möjligt.<br><br>Akut? Ring <strong>0471-24 97 50</strong> dygnet runt.</div>
               <button class="ew-btn ew-btn-outline" onclick="eeGoHome()" style="margin-top:20px;">Tillbaka till start</button>
@@ -1010,43 +1015,63 @@
     return driftStatus.services.filter(function(s) { return s.status !== 'ok'; }).length;
   }
 
-  function eeRenderDriftHero() {
-    var overall   = eeGetOverallStatus();
-    var activeCount = eeGetActiveCount();
-    var heroEl    = document.getElementById('drift-hero-el');
-    var tagEl     = document.getElementById('dhero-tag');
-    var timeEl    = document.getElementById('dhero-time');
-    var iconEl    = document.getElementById('dhero-icon');
-    var titleEl   = document.getElementById('dhero-title');
-    var subEl     = document.getElementById('dhero-sub');
-    var pillsEl   = document.getElementById('dhero-pills');
+  // ─── HUGE ICONS — inline SVG-bibliotek ──────────────────────────────────
+  var HI = {
+    // Tjänsteikoner (driftsstatus-rader & hitta oss)
+    elnat:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.09 12.45a1 1 0 0 0 .77 1.63H11l-1 8 8.92-10.45a1 1 0 0 0-.77-1.63H13l1-8z"/></svg>',
+    fjarrvarme:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c3.5 0 6-2.5 6-6 0-4-3-7-3-10a3 3 0 0 0-6 0c0 3-3 6-3 10 0 3.5 2.5 6 6 6z"/><path d="M9 17.5c0 1.5 1.5 2.5 3 2.5s3-1 3-2.5c0-2-2-3.5-2-5.5a1.5 1.5 0 0 0-2 0c0 2-2 3.5-2 5.5z"/></svg>',
+    va:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12.5 4 15a8 8 0 0 0 16 0c0-2.5-2-7-8-13z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg>',
+    fiber:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>',
+    avfall:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.5a2.5 2.5 0 0 1 0-5H5"/><path d="M12 19h7"/><path d="M16.5 5a2.5 2.5 0 0 1 0 5H16"/><path d="M3 5h9"/><path d="M7 5v14"/><polyline points="21 16 16 21 11 16"/><polyline points="15 3 20 8 15 13"/></svg>',
+    // Hero status-ikoner
+    ok:        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m8 12 3 3 5-5"/></svg>',
+    warn:      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.5" fill="currentColor" stroke="none"/></svg>',
+    err:       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="0.5" fill="currentColor" stroke="none"/></svg>',
+    // Övrigt
+    building:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="18" rx="1"/><path d="M21 8h-4a1 1 0 0 0-1 1v12h5V9a1 1 0 0 0 0-1z"/><path d="M7 7h4M7 11h4M7 15h4"/><rect x="8" y="18" width="2" height="3"/></svg>',
+    recycle:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 8.5 1.5 3.5 6.5 3.5"/><path d="M1.5 3.5 7 9a11 11 0 0 1 13 0"/><polyline points="22.5 15.5 22.5 20.5 17.5 20.5"/><path d="M22.5 20.5 17 15a11 11 0 0 1-13 0"/><line x1="7" y1="22" x2="9.5" y2="19"/><line x1="17" y1="2" x2="14.5" y2="5"/></svg>',
+    water:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 8 4 12.5 4 15a8 8 0 0 0 16 0c0-2.5-2-7-8-13z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg>',
+    phone:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.82 19 19.5 19.5 0 0 1 5 12.18 19.79 19.79 0 0 1 2.08 3.18 2 2 0 0 1 4.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/><path d="M14.5 2.5c1.5 1 3 2.5 3.5 5"/><path d="M17.5 0C20 1.5 22 4 22 7.5"/></svg>',
+    sms:       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2" stroke-linecap="round"/><path d="M9 7h6M9 11h4"/></svg>',
+    check:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m8 12 3 3 5-5"/></svg>'
+  };
 
-    // Hero class
+  // Tjänsteikon-mapping
+  var serviceIcons = {
+    elnat: HI.elnat, fjarrvarme: HI.fjarrvarme, va: HI.va, fiber: HI.fiber, avfall: HI.avfall
+  };
+
+  function eeRenderDriftHero() {
+    var overall     = eeGetOverallStatus();
+    var activeCount = eeGetActiveCount();
+    var heroEl  = document.getElementById('drift-hero-el');
+    var tagEl   = document.getElementById('dhero-tag');
+    var timeEl  = document.getElementById('dhero-time');
+    var iconEl  = document.getElementById('dhero-icon');
+    var titleEl = document.getElementById('dhero-title');
+    var subEl   = document.getElementById('dhero-sub');
+    var pillsEl = document.getElementById('dhero-pills');
+
     heroEl.className = 'drift-hero ' + overall;
 
-    // Tag text
     var tagTexts = { ok: 'Alla tjänster OK', warn: 'Planerat arbete', err: 'Aktiv störning' };
     tagEl.textContent = tagTexts[overall];
-
-    // Timestamp
     timeEl.textContent = 'Uppdaterad ' + driftStatus.updated;
 
-    // Icon + title
     if (overall === 'ok') {
-      iconEl.textContent = '✅';
+      iconEl.innerHTML = HI.ok;
       titleEl.textContent = 'Alla tjänster fungerar normalt';
       subEl.textContent = 'Elnät · Fjärrvärme · VA · Fiber · Avfall';
     } else if (overall === 'warn') {
-      iconEl.textContent = '🔧';
+      iconEl.innerHTML = HI.warn;
       titleEl.textContent = activeCount + (activeCount === 1 ? ' planerat arbete pågår' : ' planerade arbeten pågår');
       subEl.textContent = 'Klicka för att se detaljer';
     } else {
-      iconEl.textContent = '⚠️';
+      iconEl.innerHTML = HI.err;
       titleEl.textContent = activeCount + (activeCount === 1 ? ' aktiv störning' : ' aktiva störningar');
       subEl.textContent = 'Klicka för att se detaljer';
     }
 
-    // Pills
     pillsEl.innerHTML = '';
     driftStatus.services.forEach(function(svc) {
       var pill = document.createElement('div');
@@ -1055,15 +1080,13 @@
       pillsEl.appendChild(pill);
     });
 
-    // Header dot
-    var hdot = document.getElementById('ew-hdot');
+    var hdot  = document.getElementById('ew-hdot');
     var htext = document.getElementById('ew-status-text');
     hdot.className = 'ew-hdot ' + overall;
     htext.textContent = overall === 'ok' ? 'Alla tjänster OK'
                       : overall === 'warn' ? 'Planerat arbete'
                       : 'Aktiv störning';
 
-    // Launcher badge
     var badge = document.getElementById('ee-launcher-badge');
     if (activeCount > 0) {
       badge.textContent = activeCount;
@@ -1082,10 +1105,11 @@
     var badgeLabels = { ok: 'Normal drift', warn: 'Planerat arbete', err: 'Störning' };
 
     driftStatus.services.forEach(function(svc) {
+      var svgIcon = serviceIcons[svc.key] || HI.elnat;
       var row = document.createElement('div');
       row.className = 'drift-row';
       row.innerHTML =
-        '<div class="drift-row-icon">' + svc.icon + '</div>' +
+        '<div class="drift-row-icon">' + svgIcon + '</div>' +
         '<div class="drift-row-info">' +
           '<div class="drift-row-name">' + svc.label + '</div>' +
           (svc.message ? '<div class="drift-row-msg">' + svc.message + '</div>' : '') +
